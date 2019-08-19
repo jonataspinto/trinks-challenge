@@ -1,0 +1,14 @@
+@import '../../../styles.scss';
+.container-fluid{
+    background-color: lighten(black, 10%);
+    min-height: calc(100vh - 56px);
+    padding: calc(39px/2) ;
+    .card{
+        margin:calc(39px/2);
+        // margin-bottom: calc(39px/2);
+    }
+    .alert{
+        width: 100vw;
+        height: 10vh;;
+    }
+}

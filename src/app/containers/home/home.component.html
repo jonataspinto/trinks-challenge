@@ -1,6 +1,30 @@
-<nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-dark" type="submit">Search</button>
-  </form>
-</nav>
+<app-header>
+  <ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href=""><img style="width:25px" src="https://raw.githubusercontent.com/dunapanta/Spotify-API-Angular-7/master/src/assets/img/banner-ico.png" alt="">
+        </a>      
+    </li>
+    <li class="nav-item">
+      <a class="navbar-brand"  style="color: white; cursor: pointer" (click)="getNewReleases()">Release</a>
+    </li>
+    <li class="nav-item">
+        <a class="navbar-brand" routerLink="/search">Disabled</a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li> -->
+  </ul>
+</app-header>
+
+<div class="container-fluid d-flex flex-row flex-wrap justify-content-around ">
+  <div class="card" style="width: 18rem;" *ngFor="let item of newSongs">
+    <img [src]= item.images[1].url class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted"> {{item.artists[0].name}}</h6>
+    </div>
+  </div>
+  <div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <p>{{messageError}}</p>
+  </div>
+</div>

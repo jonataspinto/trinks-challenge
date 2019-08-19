@@ -1,3 +1,18 @@
-<p>
-  header works!
-</p>
+<nav class="navbar navbar-light ">
+    <ul class="nav">
+        <li class="nav-item">
+            <img class="navbar-brand" style="width:25px" src="https://raw.githubusercontent.com/dunapanta/Spotify-API-Angular-7/master/src/assets/img/banner-ico.png" alt="">                
+        </li>
+        <li class="nav-item">
+            <a 
+                class="navbar-brand"  
+                style="color: white; cursor: pointer" 
+                routerLink="/home" 
+                (click)="getNewReleases()"> Release
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" style="color: white;" routerLink="/search">Disabled</a>
+        </li>
+    </ul>
+</nav>

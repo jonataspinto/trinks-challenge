@@ -3,18 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './containers/home/home.component';
-import { HeaderComponent } from './shared/components/header/header.component';
-
+import { HomeModule } from './containers/home/home.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ArtistsComponent } from './shared/components/artists/artists.component';
+import { SearchComponent } from './containers/search/search.component';
+import { CardsComponent } from './shared/components/cards/cards.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent
+    ArtistsComponent,
+    SearchComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

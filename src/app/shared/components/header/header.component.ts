@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from 'src/app/services/spotify.service';
+import { HomeComponent } from 'src/app/containers/home/home.component';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  
+  constructor(private releases: HomeComponent) { }
 
-  constructor() { }
+  getNewReleases(){
+   this.releases.getNewReleases()
+    
+  }
 
   ngOnInit() {
   }
